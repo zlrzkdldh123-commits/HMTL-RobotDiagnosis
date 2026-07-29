@@ -8,7 +8,7 @@
 model:
   hidden_dim: 128              # Hidden dimension
   num_iterations: 3            # IKR iterations (K)
-  input_seq_len: 780           # Input sequence length
+  input_seq_len: 7800           # Input sequence length
   input_channels: 2            # Vibration channels (x, y)
   num_main_classes: 3          # Main task classes (Normal, Tension, Wear)
   num_severity_levels: 3       # Severity levels per fault type (Light, Medium, Severe)
@@ -42,7 +42,7 @@ loss:
 # ============================================
 data:
   train_split: 0.8             # Train/test split ratio
-  seq_len: 780                 # Sequence length (time steps)
+  seq_len: 7800                 # Sequence length (time steps)
   num_classes: 3               # Number of main classes
   num_severity_levels: 3       # Severity levels per fault type
   sampling_rate: 25600         # Hz (25.6 kHz)
