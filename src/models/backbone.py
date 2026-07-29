@@ -9,7 +9,7 @@ import torch.nn as nn
 class CNNBackbone(nn.Module):
     """
     1D CNN backbone for vibration signal feature extraction
-    Input: (batch_size, 2, 780) - 2 channels, 780 time steps
+    Input: (batch_size, 2, 7800) - 2 channels, 7800 time steps
     Output: (batch_size, hidden_dim) - latent representation
     """
     def __init__(self, input_channels=2, hidden_dim=128):
@@ -61,7 +61,7 @@ class CNNBackbone(nn.Module):
     def forward(self, x):
         """
         Args:
-            x: (batch_size, 2, 780)
+            x: (batch_size, 2, 7800)
         Returns:
             h: (batch_size, hidden_dim)
         """
