@@ -21,7 +21,7 @@ class H_MTL_Model(nn.Module):
     Sub Tasks: Severity estimation (Light, Medium, Severe) for each fault type
     """
     
-    def __init__(self, seq_len=780, hidden_dim=128, num_iterations=3):
+    def __init__(self, seq_len=7800, hidden_dim=128, num_iterations=3):
         super().__init__()
         self.seq_len = seq_len
         self.hidden_dim = hidden_dim
@@ -92,7 +92,7 @@ class H_MTL_Model(nn.Module):
     def forward(self, x, stage='both'):
         """
         Args:
-            x: (batch_size, 2, 780) - vibration signal
+            x: (batch_size, 2, 7800) - vibration signal
             stage: 'both' (main+sub), 'main' (only main), or 'sub' (only sub)
         
         Returns:
