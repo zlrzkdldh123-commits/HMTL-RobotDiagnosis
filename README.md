@@ -17,7 +17,7 @@ This repository implements a **Hierarchical Severity-Aware Multi-Task Learning (
 ### Model Components
 
 ```
-Input (Batch, 2, 780)
+Input (Batch, 2, 7800)
     ↓
 ┌─────────────────────┐
 │   CNN Backbone      │ → Feature extraction (2→16→32→64→128)
@@ -41,7 +41,7 @@ Main Task  Sub Tasks
 
 | Module | Purpose | Input | Output |
 |--------|---------|-------|--------|
-| **Backbone** | 1D CNN feature extraction | (B, 2, 780) | (B, 128) |
+| **Backbone** | 1D CNN feature extraction | (B, 2, 7800) | (B, 128) |
 | **SPF** | Severity-aware representations | (B, 128) | (B, 128) × 3 domains |
 | **IKR** | Iterative knowledge exchange | (B, 128) × 3 | (B, 128) × 3 (refined) |
 | **Classifiers** | Task predictions | (B, 128) | (B, 3) logits |
@@ -83,7 +83,7 @@ from src.utils.dataset import load_industrial_data
 train_loader, test_loader = load_industrial_data(
     data_dir='data/robot_dataset',
     batch_size=64,
-    seq_len=780
+    seq_len=7800
 )
 ```
 
@@ -94,7 +94,7 @@ from src.models.h_mtl_model import H_MTL_Model
 from src.train import train_model
 
 # Initialize model
-model = H_MTL_Model(seq_len=780, hidden_dim=128, num_iterations=3)
+model = H_MTL_Model(seq_len=7800, hidden_dim=128, num_iterations=3)
 
 # Train
 history = train_model(
@@ -160,7 +160,7 @@ Edit `configs/default.yaml`:
 model:
   hidden_dim: 128
   num_iterations: 3
-  input_seq_len: 780
+  input_seq_len: 7800
 
 # Training Configuration
 train:
@@ -178,7 +178,7 @@ loss:
 # Data Configuration
 data:
   train_split: 0.8
-  seq_len: 780
+  seq_len: 7800
   num_classes: 3
   num_severity_levels: 3
 ```
