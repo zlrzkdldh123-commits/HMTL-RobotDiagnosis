@@ -146,9 +146,9 @@ print(f"Adjacent Confusion Rate: {results['acr']:.2f}%")
 
 | Model | Main Acc | Sub Acc | Macro-F1 | ACR |
 |-------|----------|---------|----------|-----|
-| MSCNN-LSTM | 96.9% | 96.38% | 0.9632 | 8.94% |
-| CNN-Transformer | 97.13% | 96.9% | 0.9687 | 8.62% |
-| ResNet18 | 97.55% | 97.45% | 0.9742 | 7.45% |
+| MSCNN | 96.3% | 96.44% | 0.9644 | 9.14% |
+| OR-MTL | 96.63% | 96.7% | 0.9671 | 8.72% |
+| WDCNN-BiLSTM | 97.75% | 97.47% | 0.9747 | 7.45% |
 | **H-MTL (Proposed)** | **97.89%** | **97.55%** | **0.9753** | **6.49%** |
 
 ## 🔧 Configuration
